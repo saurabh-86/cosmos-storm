@@ -1,0 +1,6 @@
+#! /bin/bash
+
+PACKAGE=pe-cosmos-storm
+if [ "$1" = "purge" ];then
+	rm -rf "/var/lib/$PACKAGE" "/etc/init.d/$PACKAGE" "/etc/$PACKAGE"
+fi

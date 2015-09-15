@@ -1,0 +1,20 @@
+#! /bin/bash
+
+PACKAGE=pe-cosmos-storm
+USERNAME=cosmos
+USERID=4525
+GROUPNAME=cosmos
+GROUPID=4500
+
+#create users if they don't exist
+if ! getent group $GROUPNAME > /dev/null; then
+  groupadd -g $GROUPID $GROUPNAME || echo "$PKG : Adding group $GROUPNAME <<FAILURE>>"| tee -a /var/log/dpkg.log || true
+fi
+
+if ! getent passwd $USERID > /dev/null; then
+  useradd -g $GROUPID -u $USERID $USERNAME || echo "$PKG : Adding user $USERNAME <<FAILURE>>" | tee -a /var/log/dpkg.log || true
+fi
+
+chown -R $USERNAME:$GROUPNAME /var/lib/$PACKAGE
+chown -R $USERNAME:$GROUPNAME /etc/$PACKAGE
+chown $USERNAME:$GROUPNAME /etc/init.d/$PACKAGE

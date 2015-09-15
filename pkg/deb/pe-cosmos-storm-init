@@ -1,0 +1,34 @@
+PACKAGE=pe-cosmos-storm
+USERNAME=cosmos
+
+start() {
+    cd /var/lib/$PACKAGE
+    sudo -u $USERNAME bash -c 'export PYTHONPATH=$PYTHONPATH:/var/lib/$PACKAGE/libs; nohup python cosmos-storm.py | /usr/bin/cosmos > /dev/null 2>&1 &'
+    echo "Started $PACKAGE."
+}
+
+stop() {
+    pkill -KILL -f cosmos-storm.py
+}
+
+restart() {
+    stop
+    start
+}
+
+case "$1" in
+	start)
+        start
+	;;
+	stop)
+		stop
+	;;
+	restart)
+        restart
+    ;;
+	*)
+		echo "USAGE: $0 start | stop | restart "
+		exit 3
+	;;
+esac
+
