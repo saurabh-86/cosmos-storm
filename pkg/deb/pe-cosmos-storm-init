@@ -3,7 +3,7 @@ USERNAME=cosmos
 
 start() {
     cd /var/lib/$PACKAGE
-    sudo -u $USERNAME bash -c 'export PYTHONPATH=$PYTHONPATH:/var/lib/$PACKAGE/libs; nohup python cosmos-storm.py | /usr/bin/cosmos > /dev/null 2>&1 &'
+    sudo -u $USERNAME bash -c 'export PYTHONPATH=$PYTHONPATH:/var/lib/pe-cosmos-storm/libs; nohup python cosmos-storm.py | cosmos > /dev/null 2>&1 &'
     echo "Started $PACKAGE."
 }
 
