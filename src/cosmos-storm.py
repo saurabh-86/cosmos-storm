@@ -8,12 +8,13 @@ import socket
 import re
 from urlparse import urljoin
 
-#STORM_URL='http://athena-storm-app-0001.nm.flipkart.com:7700'
-#METRIC_PREFIX='athena-storm-app'
-#INTERVAL=30
+
+METRIC_PREFIX=open("/etc/default/cosmos-service", "r").read().rstrip()
+INTERVAL=30
 
 HOSTNAME=socket.getfqdn()
 HOST_TAG="host="+HOSTNAME
+STORM_URL='http://'+HOSTNAME+':7700'
 
 WINDOW_NAMES = {'600':'TenMinute', '10800':'ThreeHour', '86400':'OneDay', ':all-time':'AllTime'}
 WINDOW_ATTRS = ['emitted', 'transferred', 'acked', 'failed']
