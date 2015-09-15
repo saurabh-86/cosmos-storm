@@ -34,7 +34,7 @@ echo "Building debian ..."
 dpkg-deb -b $PACKAGE_ROOT
 
 echo "Removing older debians ..."
-rm pkg/*.deb
+rm -f pkg/*.deb
 
 echo "Renaming debian ..."
 mv $PACKAGE_ROOT.deb pkg/${PACKAGE}_${VERSION}_${ARCH}.deb
