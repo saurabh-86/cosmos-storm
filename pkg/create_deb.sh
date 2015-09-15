@@ -4,6 +4,9 @@ PACKAGE_ROOT="./cosmos-storm-pkg"
 VERSION=$GO_PIPELINE_LABEL
 ARCH=all
 
+echo "Removing old temp directory ${PACKAGE_ROOT} ..."
+rm -rf $PACKAGE_ROOT
+
 echo "Creating temp packaging directory ${PACKAGE_ROOT} ..."
 mkdir -p $PACKAGE_ROOT
 mkdir -p $PACKAGE_ROOT/DEBIAN
