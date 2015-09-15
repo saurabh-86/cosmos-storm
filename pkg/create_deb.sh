@@ -1,5 +1,5 @@
 #!/bin/sh
-PACKAGE=cosmos-storm
+PACKAGE=pe-cosmos-storm
 PACKAGE_ROOT="./cosmos-storm-pkg"
 VERSION=$GO_PIPELINE_LABEL
 ARCH=all
