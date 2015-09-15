@@ -30,10 +30,6 @@ pip install -r pkg/requirements.txt -t $PACKAGE_ROOT/var/lib/$PACKAGE/libs
 echo "Copying python script to ${PACKAGE_ROOT} ..."
 cp src/*.py $PACKAGE_ROOT/var/lib/$PACKAGE/
 
-echo "Confd templates and resources"
-cp confd/*.tmpl $PACKAGE_ROOT/etc/confd/templates
-cp confd/*.toml $PACKAGE_ROOT/etc/confd/conf.d
-
 echo "Building debian ..."
 dpkg-deb -b $PACKAGE_ROOT
 
