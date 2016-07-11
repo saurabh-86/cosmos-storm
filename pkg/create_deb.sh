@@ -9,7 +9,7 @@ rm -rf $PACKAGE_ROOT
 
 echo "Creating temp packaging directory ${PACKAGE_ROOT} ..."
 mkdir -p $PACKAGE_ROOT
-m#kdir -p $PACKAGE_ROOT/DEBIAN
+#mkdir -p $PACKAGE_ROOT/DEBIAN
 mkdir -p $PACKAGE_ROOT/var/lib/$PACKAGE
 mkdir -p $PACKAGE_ROOT/etc/$PACKAGE
 mkdir -p $PACKAGE_ROOT/etc/init.d
