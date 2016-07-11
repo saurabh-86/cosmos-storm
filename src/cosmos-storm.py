@@ -10,7 +10,7 @@ from urlparse import urljoin
 
 
 METRIC_PREFIX=open("/etc/default/cosmos-service", "r").read().rstrip()
-INTERVAL=30
+#INTERVAL=30
 
 HOSTNAME=socket.getfqdn()
 HOST_TAG="host="+HOSTNAME
@@ -88,7 +88,7 @@ def startPolling():
         storm_response = getStormTopologyStats(topology_id)
         parseResponse(storm_response)
 
-    threading.Timer(INTERVAL, startPolling).start()
+#    threading.Timer(INTERVAL, startPolling).start()
 
 if __name__ == "__main__":
     startPolling()

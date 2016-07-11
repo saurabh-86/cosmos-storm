@@ -1,0 +1,2 @@
+* * * * * root "cd /var/lib/pe-cosmos-storm; export PYTHONPATH=$PYTHONPATH:/var/lib/pe-cosmos-storm/libs;
+python cosmos-storm.py | cosmos"
