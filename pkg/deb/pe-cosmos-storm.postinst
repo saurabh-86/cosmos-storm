@@ -18,3 +18,4 @@ fi
 chown -R $USERNAME:$GROUPNAME /var/lib/$PACKAGE
 chown -R $USERNAME:$GROUPNAME /etc/$PACKAGE
 #chown $USERNAME:$GROUPNAME /etc/init.d/$PACKAGE
+chown root:root /etc/cron.d/cosmos-storm
